@@ -6,6 +6,9 @@ input.onButtonPressed(Button.A, function () {
     music.playTone(392, music.beat(BeatFraction.Whole))
     basic.showString("LOS")
 })
+input.onButtonPressed(Button.B, function () {
+    music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
+})
 basic.forever(function () {
 	
 })
