@@ -4,10 +4,16 @@ input.onButtonPressed(Button.A, function () {
         basic.showNumber(5 - index)
     }
     music.playTone(392, music.beat(BeatFraction.Whole))
-    basic.showString("LOS")
+    basic.showString("go!")
 })
 input.onButtonPressed(Button.B, function () {
-    music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 5000, 0, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
+    if (Math.randomBoolean()) {
+        basic.showString("LOST!!!")
+        music.playSoundEffect(music.builtinSoundEffect(soundExpression.sad), SoundExpressionPlayMode.UntilDone)
+    } else {
+        basic.showString("WON!!!")
+        music.playSoundEffect(music.builtinSoundEffect(soundExpression.happy), SoundExpressionPlayMode.UntilDone)
+    }
 })
 basic.forever(function () {
 	
